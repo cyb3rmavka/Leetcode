@@ -9,14 +9,14 @@ Note: You may not engage in multiple transactions simultaneously (i.e., you must
 class Solution {
 public:
     int maxProfit(vector<int> &prices) {
-		const int N = prices.size();
-		int *lMaxYield = new int[n]();
-    	int *rMaxYield = new int[n]();
-		int minCost = prices[0];
+	    const int N = prices.size();
+	    int *lMaxYield = new int[n]();
+	    int *rMaxYield = new int[n]();
+	    int minCost = prices[0];
 	    
-   		for (int i = 1; i < n; i++) {
-			minCost = min(minCost, prices[i]);
-			lMaxYield[i] = max(lMaxYield[i - 1], prices[i] - minCost);
+	    for (int i = 1; i < n; i++) {
+		    minCost = min(minCost, prices[i]);
+		    lMaxYield[i] = max(lMaxYield[i - 1], prices[i] - minCost);
 	    }
 		
 	    int maxCost = prices[n - 1];
